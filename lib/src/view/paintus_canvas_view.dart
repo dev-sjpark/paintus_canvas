@@ -1,7 +1,8 @@
 library paintus_canvas_view;
 
 import 'package:flutter/gestures.dart';
-import 'package:flutter/widgets.dart';
+import 'package:flutter/material.dart';
+import 'dart:developer';
 
 part './multi_gusture_recognizer.dart';
 
@@ -10,7 +11,77 @@ class PaintusCanvasView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    throw UnimplementedError();
+    return RawGestureDetector(
+      gestures: <Type, GestureRecognizerFactory>{
+        ScaleGestureRecognizer: GestureRecognizerFactoryWithHandlers<ScaleGestureRecognizer>(
+            () => ScaleGestureRecognizer(),
+            (inst) {
+              inst.onStart = _onStart;
+              inst.onUpdate = _onUpdate;
+              inst.onEnd = _onEnd;
+            },
+        ),
+      },
+      child: Container(
+        color: Colors.transparent,
+      ),
+    );
   }
 
+  void _onStart(ScaleStartDetails details) {
+    if (details.pointerCount == 1) {
+      _panStart(details);
+    }
+    else if (details.pointerCount == 2) {
+      _scaleStart(details);
+    }
+  }
+
+  /// invoked if pointer count is 1.
+  void _panStart(ScaleStartDetails details) {
+
+  }
+
+  /// invoked if pointer count is 2.
+  void _scaleStart(ScaleStartDetails details) {
+
+  }
+
+  void _onUpdate(ScaleUpdateDetails details) {
+    if (details.pointerCount == 1) {
+      _panUpdate(details);
+    }
+    else if (details.pointerCount == 2) {
+      _scaleUpdate(details);
+    }
+  }
+
+  /// invoked if pointer count is 1.
+  void _panUpdate(ScaleUpdateDetails details) {
+
+  }
+
+  /// invoked if pointer count is 2.
+  void _scaleUpdate(ScaleUpdateDetails details) {
+
+  }
+
+  void _onEnd(ScaleEndDetails details) {
+    if (details.pointerCount == 1) {
+      _panEnd(details);
+    }
+    else if (details.pointerCount == 2) {
+      _scaleEnd(details);
+    }
+  }
+
+  /// invoked if pointer count is 1.
+  void _panEnd(ScaleEndDetails details) {
+
+  }
+
+  /// invoked if pointer count is 2.
+  void _scaleEnd(ScaleEndDetails details) {
+
+  }
 }
