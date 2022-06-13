@@ -1,13 +1,15 @@
-library paintus_canvas_view;
+library drawing_canvas;
 
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'dart:developer';
 
-part './multi_gusture_recognizer.dart';
+import 'package:paintus_canvas/drawing_canvas.dart';
 
-class PaintusCanvasView extends StatelessWidget {
-  const PaintusCanvasView({Key? key}) : super(key: key);
+part './drawing_controller.dart';
+
+class DrawingCanvasView extends StatelessWidget {
+  const DrawingCanvasView({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:paintus_canvas/paintus_canvas.dart';
+import 'package:paintus_canvas/drawing_canvas.dart';
 
 void main() {
   runApp(const MyApp());
@@ -26,7 +26,7 @@ class _MyAppState extends State<MyApp> {
         appBar: AppBar(
           title: const Text('Plugin example app'),
         ),
-        body: const PaintusCanvasView(),
+        body: const DrawingCanvasView(),
       ),
     );
   }

@@ -1,1 +1,0 @@
-export 'src/view/paintus_canvas_view.dart';
